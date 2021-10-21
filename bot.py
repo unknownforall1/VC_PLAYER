@@ -29,7 +29,7 @@ self_or_contact_filter = filters.create(
 # start message
 @app.on_message(filters.command('start') & self_or_contact_filter)
 async def start(client, message):
-    await message.reply("**Heya, I'm SID VC PLAYER BOT is online 🎵**")
+    await message.reply("**HEYA 🎶, I'M SID VC PLAYER AND NOW I'M WORKING 🎧🎶🎵**")
 
 # ping checker
 @app.on_message(filters.command('ping') & self_or_contact_filter)
@@ -60,7 +60,7 @@ async def play_track(client, message):
     ).overwrite_output().run()
     os.remove(audio_original)
     if VOICE_CHATS and message.chat.id in VOICE_CHATS:
-        text = f'▶️ Playing **{audio.title}** at **{message.chat.title}** by SID VC Player...'
+        text = f'▶️ Playing🎶 **{audio.title}** at **{message.chat.title}** BY SID VC PLAYER 🎶🎵...'
     else:
         try:
             group_call = GroupCall(client, input_filename)
@@ -69,7 +69,7 @@ async def play_track(client, message):
             await message.reply('Group Call doesnt exist')
             return
         VOICE_CHATS[message.chat.id] = group_call
-    await a.edit(f'▶️ Playing **{audio.title}** at **{message.chat.title}** by SID VC Player...')
+    await a.edit(f'▶️ Playing🎶 **{audio.title}** at **{message.chat.title}** BY SID VC PLAYER🎶🎵...')
 
 
 @app.on_message(filters.command('stopvc') & self_or_contact_filter)
